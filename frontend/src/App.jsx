@@ -33,7 +33,7 @@ function App() {
 	return (
 		<Layout>
 			<Routes>
-				<Route path='/' element={authUser ? <HomePage /> : <Navigate to={"/login"} />} />
+				<Route path='/' element={authUser ? <HomePage /> : <Navigate to={"/"} />} />
 				<Route path='/signup' element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />} />
 				<Route path='/login' element={!authUser ? <LoginPage /> : <Navigate to={"/"} />} />
 				<Route path='/notifications' element={authUser ? <NotificationsPage /> : <Navigate to={"/login"} />} />

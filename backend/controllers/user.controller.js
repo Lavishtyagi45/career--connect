@@ -1,4 +1,4 @@
-import {User} from "../models/user.model.js";
+import User from "../models/user.model.js";
 import cloudinary from "../libs/cloudinary.js";
 
 export const getSuggestedConnections = async (req, res) => {

@@ -1,4 +1,4 @@
-import {User} from "../models/user.model.js";
+import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { sendWelcomeEmail } from "../emails/emailHandlers.js";
@@ -78,7 +78,7 @@ export const login = async (req, res) => {
 
 		// Create and send token
 		const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "3d" });
-		await res.cookie("jwt-carrer-connect", token, {
+		await res.cookie("jwt-career-connect", token, {
 			httpOnly: true,
 			maxAge: 3 * 24 * 60 * 60 * 1000,
 			sameSite: "strict",
@@ -93,7 +93,7 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-	res.clearCookie("jwt-carrer-connect");
+	res.clearCookie("jwt-career-connect");
 	res.json({ message: "Logged out successfully" });
 };
 
