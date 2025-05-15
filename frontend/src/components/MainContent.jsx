@@ -15,7 +15,7 @@ const MainContent = () => {
 
       {/* Action Buttons */}
       <div className="flex gap-6 justify-center items-center mt-6 text-lg">
-        <a href="/coming-soon">
+        <a href="/signup">
         <button
           className="px-4 py-2 bg-zinc-600 rounded hover:bg-gray-400 transition"
         >

@@ -12,7 +12,8 @@ import NetworkPage from "./pages/NetworkPage";
 import PostPage from "./pages/PostPage";
 import ProfilePage from "./pages/ProfilePage";
 import MainContent from "./components/MainContent";
-import ComingSoon from "./components/ComingSoon";
+import PracticePage from "./pages/PracticePage";
+import SolveQuestion from "./pages/solveQuestion";
 
 function App() {
 	const { data: authUser, isLoading } = useQuery({
@@ -42,7 +43,8 @@ function App() {
 				<Route path='/network' element={authUser ? <NetworkPage /> : <Navigate to={"/login"} />} />
 				<Route path='/post/:postId' element={authUser ? <PostPage /> : <Navigate to={"/login"} />} />
 				<Route path='/profile/:username' element={authUser ? <ProfilePage /> : <Navigate to={"/login"} />} />
-				<Route path='/coming-soon' element={<ComingSoon/>} />
+				<Route path="/practice" element={authUser ?<PracticePage />: <Navigate to={"/login"} />} />
+				<Route path="/practice/:id" element={authUser?<SolveQuestion />:<Navigate to={"/login"} />} />
 			</Routes>
 			<Toaster />
 		</Layout>

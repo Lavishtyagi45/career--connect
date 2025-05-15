@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { axiosInstance } from "../../lib/axios";
 import { Link } from "react-router-dom";
-import { Bell, Home, LogOut, User, Users } from "lucide-react";
+import { Bell, Book, Home, LogOut, User, Users } from "lucide-react";
 
 const Navbar = () => {
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
@@ -35,7 +35,7 @@ const Navbar = () => {
 				<div className='flex justify-between items-center py-3'>
 					<div className='flex items-center space-x-4'>
 						<Link to='/'>
-							<img className='h-8 rounded' src='/small-logo.png' alt='CareerConnect' />
+							<img className='h-8 rounded md:h-10' src='/cc.png' alt='CareerConnect' />
 						</Link>
 					</div>
 					<div className='flex items-center gap-2 md:gap-6'>
@@ -56,6 +56,10 @@ const Navbar = () => {
 											{unreadConnectionRequestsCount}
 										</span>
 									)}
+								</Link>
+								<Link to='/practice' className='text-neutral flex flex-col items-center'>
+									<Book size={20} />
+									<span className='text-xs hidden md:block'>Practice</span>
 								</Link>
 								<Link to='/notifications' className='text-neutral flex flex-col items-center relative'>
 									<Bell size={20} />
